@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desktop Only Form</title>
+    <style>
+        #formContainer {
+            display: none;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="formContainer">
+        <!-- Paste the embed code of your Google Form here -->
+        <!-- Example: -->
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc-sS9sR4kX0LeuRDaARgBt3LBI2zQ2vMj1eQz8MkLlKKSPxg/viewform?embedded=true" width="640" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </div>
+    <div id="mobileMessage">
+        <p>This form is only accessible on desktop browsers.</p>
+    </div>
+    <script>
+        // Function to check if the device is mobile
+        function isMobileDevice() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+
+        // Show form if not on a mobile device
+        if (!isMobileDevice()) {
+            document.getElementById("formContainer").style.display = "block";
+        } else {
+            document.getElementById("mobileMessage").style.display = "block";
+        }
+    </script>
+</body>
+</html>
